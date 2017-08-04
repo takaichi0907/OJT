@@ -1,12 +1,12 @@
 import socket
-  import logging
-  from contextlib import closing
+import logging
+from contextlib import closing
   
   
-  print('何をしますか？')
-  s = input('1.新規登録  2.参照  3.削除')
+print('何をしますか？')
+s = input('1.新規登録  2.参照  3.削除')
   
-  if s == '1':
+if s == '1':
       print('新規登録が選ばれました')
       def main():
           host = 'localhost'
@@ -32,11 +32,11 @@ import socket
       if __name__ == '__main__':
           main()
  
-  elif s == '2':
+elif s == '2':
        print('参照が選ばれました')
  
-  elif s == '3':
+elif s == '3':
        print('削除が選ばれました')
  
-  else:
+else:
        print('もう一度やり直してください')
