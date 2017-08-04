@@ -1,0 +1,42 @@
+import socket
+  import logging
+  from contextlib import closing
+  
+  
+  print('何をしますか？')
+  s = input('1.新規登録  2.参照  3.削除')
+  
+  if s == '1':
+      print('新規登録が選ばれました')
+      def main():
+          host = 'localhost'
+          port = 4649
+          bufsize = 4096
+          bufsize2 = 4096
+ 
+          sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+          with closing(sock):
+               sock.connect((host, port))
+               Key = input ('Key:')
+               print (Key)
+               Keys = str(Key) ####
+               sock.send(b'Keys')  ###
+               print(sock.recv(bufsize))
+               Value = input ('Value:')
+               print (Value)
+               Values = (Value) ###
+               sock.send(b'Values') ###
+               print(sock.recv(bufsize2))
+          return
+ 
+      if __name__ == '__main__':
+          main()
+ 
+  elif s == '2':
+       print('参照が選ばれました')
+ 
+  elif s == '3':
+       print('削除が選ばれました')
+ 
+  else:
+       print('もう一度やり直してください')
