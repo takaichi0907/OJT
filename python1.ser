@@ -21,10 +21,10 @@ def main():
              conn, address = sock.accept()
              with closing(conn):
                  msg = conn.recv(bufsize)
-                 print(msg)
+                 print(msg.decode('utf-8'))
                  conn.send(msg)
                  msg2 = conn.recv(bufsize2)
-                 print(msg2)
+                 print(msg2.decode('utf-8'))
                  conn.send(msg2)
       return
  
