@@ -18,13 +18,12 @@ if s == '1':
           with closing(sock):
                sock.connect((host, port))
                Key = input ('Key:')
-               print (Key)
-               sock.send(b'Keys')  
-               print(sock.recv(bufsize))
+               sock.send(Key.encode('utf-8'))  
+               print(sock.recv(bufsize).decode('utf-8'))
                Value = input ('Value:')
-               print (Value)
-               sock.send(b'Values') 
-               print(sock.recv(bufsize2))
+               sock.send(Value.encode('utf-8')) 
+               print(sock.recv(bufsize2).decode('utf-8'))
+               print('登録完了しました!')
           return
  
       if __name__ == '__main__':
