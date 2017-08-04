@@ -19,13 +19,11 @@ if s == '1':
                sock.connect((host, port))
                Key = input ('Key:')
                print (Key)
-               Keys = str(Key) ####
-               sock.send(b'Keys')  ###
+               sock.send(b'Keys')  
                print(sock.recv(bufsize))
                Value = input ('Value:')
                print (Value)
-               Values = (Value) ###
-               sock.send(b'Values') ###
+               sock.send(b'Values') 
                print(sock.recv(bufsize2))
           return
  
