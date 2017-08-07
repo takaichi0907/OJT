@@ -27,6 +27,16 @@ def main():
                  print(msg2.decode('utf-8'))
                  conn.send(msg2)
                  r.set(msg,msg2)
+                 
+                 msg3 = conn.recv(bufsize3)
+                 print(msg3.decode('utf-8'))
+                 conn.send(msg3)
+                 r.get(msg3)
+                 
+                 msg4 = conn.recv(bufsize4)
+                 print(msg4.decode('utf-8'))
+                 conn.send(msg4)
+                 r.delete(msg4)
       return
  
   if __name__ == '__main__':
