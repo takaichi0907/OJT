@@ -3,7 +3,7 @@ import redis
 import logging
 from contextlib import closing
 
-r = redis.StrictRedis(host='192.168.48.79', port=6379, db=0)
+r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
   
 def main():
      host = 'localhost'
@@ -26,6 +26,7 @@ def main():
                  msg2 = conn.recv(bufsize2)
                  print(msg2.decode('utf-8'))
                  conn.send(msg2)
+                 r.set(msg,msg2)
       return
  
   if __name__ == '__main__':
