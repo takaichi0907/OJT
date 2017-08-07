@@ -37,11 +37,11 @@ elif s == '2':
          bufsize3 = 4096
  
           sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-              with closing(sock):
-                    sock.connect((host, port))
-                    Key2 = input ('Key2:')
-                    sock.send(Key2.encode('utf-8'))
-                    print(sock.recv(bufsize3).decode('utf-8'))
+          with closing(sock):
+          sock.connect((host, port))
+          Key2 = input ('Key2:')
+          sock.send(Key2.encode('utf-8'))
+          print(sock.recv(bufsize3).decode('utf-8'))
  
  
  
@@ -49,16 +49,16 @@ elif s == '2':
          print('削除が選ばれました')
  
          host = 'localhost'
-               port = 4649
-               bufsize4 = 4096
+         port = 4649
+         bufsize4 = 4096
  
-               sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-               with closing(sock):
-                    sock.connect((host, port))
-                    Key3 = input ('Key3:')
-                    sock.send(Key3.encode('utf-8'))
-                    print(sock.recv(bufsize4).decode('utf-8'))
-                    print('削除完了しました!')
+         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+         with closing(sock):
+         sock.connect((host, port))
+         Key3 = input ('Key3:')
+         sock.send(Key3.encode('utf-8'))
+         print(sock.recv(bufsize4).decode('utf-8'))
+         print('削除完了しました!')
  
 elif s == '4':
        print('プログラムを終了します')
