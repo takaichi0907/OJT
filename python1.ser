@@ -37,8 +37,8 @@ def main():
                  print(msg4.decode('utf-8'))
                  conn.send(msg4)
                  r.delete(msg4)
-      return
- 
-  if __name__ == '__main__':
+                 return
+
+if __name__ == '__main__':
       main()
  
