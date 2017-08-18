@@ -16,12 +16,8 @@ def main():
     port = 4649
     backlog = 10
     bufsize = 4096
-    bufsize2 = 4096
-    bufsize3 = 4096
-    bufsize4 = 4096
     s = 100
     func = 10
-    #san = 100
     
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     readfds = set([sock])
