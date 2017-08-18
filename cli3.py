@@ -1,4 +1,4 @@
-#170816
+#170818
 
 import socket
 from contextlib import closing
@@ -13,11 +13,7 @@ def main():
     host = 'localhost'
     port = 4649
     bufsize = 4096
-    bufsize2 = 4096
-    bufsize3 = 4096    bufsize4 = 4096
-    bufsize5 = 4096
     s = 10
-    san = 100
  
     print('-----------------------------------------------------')    print('')
     print('何をしますか？')
@@ -25,11 +21,25 @@ def main():
     s = input('1.新規登録  2.参照  3.削除 4.プログラムの終了')
     print('')
     print('-----------------------------------------------------')
- 
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.connect((host, port))
+    
+    if s == '4':
+      print('本当に終了しますか？')
+      e = input('1.はい   2.いいえ')
+      if e == '1':
+        print(''プログラムを終了します。)
+        sys.exit()
+        
+      else:
+        print('メニューが画面に戻ります。)
+        return main()
+    try:
+       sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+       sock.connect((host, port))
+    except:
+       print('ソケットの通信が切断されています。')
+       return main()
+              
     sock.send(s.encode('utf-8'))
- 
     if s == '1':
         print('新規登録が選ばれました')
         Key = input('Keyを入力してください:')
