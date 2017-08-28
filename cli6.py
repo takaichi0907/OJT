@@ -148,16 +148,18 @@ def main():
             print('メニュー画面に戻ります')
             return main()
 
+    
     elif select_num == '7':
         print('[Key]一覧表示します')
 
         logging.info('[Key]一覧表示')
 
         Keys = sock.recv(bufsize)
-        print(Keys)
+        R = Keys.split("/")
+        print(str(R)) #.decode('utf-8'))
 
         logging('[Key]の一覧表示完了')
-
+        
     elif select_num == '8':
         print('更新します')
         Key = input('更新したいKeyを入力してください \n →')
