@@ -120,8 +120,10 @@ def main():
 
             elif (select_num.decode('utf-8')) == '7':
                     print('[key]の一覧表示します')
-                    Keys = r.keys()
-                    conn.send(Keys)#.encode('utf-8'))
+                    Keys = r.keys('*')
+                    for RKey in Keys.decode('utf-8'):
+                        qqq = RKey + "/"
+                    conn.send(bytes(qqq)) #.encode('utf-8'))
 
                     logging.info('[Key]の一覧表示完了')
 
