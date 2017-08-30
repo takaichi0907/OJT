@@ -226,8 +226,8 @@ def main():
 
 
 
-                        f.write('  \n{"Key":"%s" ,  "Value":"%s"}, ' % (key.decode('utf-8'), val.decode('utf-8')))
-                    f.write('\n]')
+                        f.write('  \n{"%s":"%s"}, ' % (key.decode('utf-8'), val.decode('utf-8')))
+                    f.write('\n]\n')
                     f.close()
 
 
